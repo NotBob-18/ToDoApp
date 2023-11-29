@@ -1,13 +1,19 @@
 const express = require("express");
+const Auth = require("../controllers/auth");
+
 // Create an app object
-const apu = express();
+const app = express();
 
 
 // Reduce fingerprinting 
-apu.disable("x-powered-by");
+app.disable("x-powered-by");
+
+
+app.use('/ToDoApp/Auth', Auth);
+
 
 // home route with the get method and a handler
-apu.get("/ToDoApp", (req, res) => {
+app.get("/ToDoApp", (req, res) => {
     try {
         res.status(200).json({
             status: "success",
@@ -22,5 +28,5 @@ apu.get("/ToDoApp", (req, res) => {
     }
 });
 
-module.exports = apu;
+module.exports = app;
 
