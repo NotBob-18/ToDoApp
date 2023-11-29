@@ -1,5 +1,5 @@
 const Users = require( "../models/user");
-// const bcrypt = require("bcrypt")
+
 
 // /**
 //  * @route POST v1/auth/register
@@ -8,10 +8,9 @@ const Users = require( "../models/user");
 //  */
 
 const registerUser = async (req, res) => {  
+     // get required variables from request body
 
-    // get required variables from request body
     // using es6 object destructing
-
     const { firstName, lastName, email, password } = req.body;
     try {
 
@@ -52,4 +51,4 @@ const registerUser = async (req, res) => {
     res.end();
 }
 
-module.exports = {registerUser}
+module.exports = registerUser

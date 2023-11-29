@@ -1,4 +1,12 @@
 ### testing server ###
-GET  http://localhost:8080/ToDoApp
+POST http://localhost:8080/ToDoApp/auth/register
+   content-type: application/json
+{
+    "email": "michaelmasala12@gmail.com",
+    "firstName": "Michael",
+    "lastName": "Masala",
+    "password": 123456
 
- 
+}
+
+ ### POST request with email, first name, last name, password to ### 
