@@ -29,8 +29,8 @@ const registerUser = async (req, res) => {
                 status: "failed",
                 data: [],
                 message: "It seems you already have an account, please log in instead.",
-            });
-            
+            }); console.log(error);console.log(error);
+            res.status(500).json({ msg: "problem area 001", error });
             // save new user into the database
         const savedUser = await newUser.save(); 
         const { password, role, ...user_data } = savedUser._doc;
@@ -39,7 +39,8 @@ const registerUser = async (req, res) => {
             data: [user_data],
             message:
                 "Thank you for registering with us. Your account has been successfully created.",
-        });
+        }); console.log(error);
+        res.status(500).json({ msg: "problem area 002", error });
     } catch (err) {
         res.status(500).json({
             status: "error",
